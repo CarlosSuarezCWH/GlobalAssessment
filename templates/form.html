@@ -1,0 +1,162 @@
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}" rel="stylesheet">
+<br>
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      <div class="loginbackground box-background--white padding-top--64">
+        <div class="loginbackground-gridContainer">
+          <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+            <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+            </div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+            <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+            <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+            <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+            <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+            <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+            <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+            <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+            <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">Obten tus resultados</span>
+
+              <form action="{{ url_for('data')}}" method="post" id="stripe-login">
+                <div class="field padding-bottom--24">
+                  <label for="Name">Nombre del alumno</label>
+                  <input type="text" >
+                </div>
+
+
+                <div class="field padding-bottom--24">
+                  <label for="ID_student">Matricula</label>
+                  <input type="text" >
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <div >
+                    <label for="cal">Ingresa tu calificación de algebra: </label>
+                  </div>
+                  <input type="text" name="algebra">
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <div >
+                    <label for="cal">Ingresa tu calificación de algoritmos y programacion:</label>
+                  </div>
+                  <input type="text" name="programacion">
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <div >
+                    <label for="cal">Ingresa tu calificación de analisis de la realidad: </label>
+                  </div>
+                  <input type="text" name="analisis">
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <div >
+                    <label for="cal"> Ingresa tu calificación de comunicacion: </label>
+                  </div>
+                  <input type="text" name="comunicacion">
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <div >
+                    <label for="cal">Ingresa tu calificación de fisica aplicada:</label>
+                  </div>
+                  <input type="text" name="fisica">
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <div>
+                    <label for="cal">Ingresa tu calificación de soluciones de la ingenieria:</label>
+                  </div>
+                  <input type="text" name="ingenieria">
+                </div>
+
+
+
+
+
+                <label> ¿Te gustaria ayudar a tus compañeros?</label>
+                <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
+                  <label for="checkbox">
+                    <input type="checkbox" name="ayudar" value="0"> No me gusta ayudar
+                    <input type="checkbox" name="ayudar" value="1"> Me gusta ayudar
+                  </label>
+                </div>
+
+
+                <label> ¿tienes miedo a hablar en publico?</label>
+                <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
+                  <label for="checkbox">
+                    <input type="checkbox" name="hablar" value="0"> No
+                    <input type="checkbox" name="hablar" value="1"> si
+                  </label>
+                </div>
+
+
+                <label> ¿Que tan bueno eres explicando?</label>
+                <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
+                  <label for="checkbox">
+                    <input type="checkbox" name="explicar" value="1"> 1
+                    <input type="checkbox" name="explicar" value="2"> 2
+                    <input type="checkbox" name="explicar" value="3"> 3
+                    <input type="checkbox" name="explicar" value="4"> 4
+                    <input type="checkbox" name="explicar" value="5"> 5
+                    <input type="checkbox" name="explicar" value="6"> 6
+                    <input type="checkbox" name="explicar" value="7"> 7
+                    <input type="checkbox" name="explicar" value="8"> 8
+                    <input type="checkbox" name="explicar" value="9"> 9
+                    <input type="checkbox" name="explicar" value="10"> 10
+                  </label>
+                </div>
+
+
+
+
+
+
+                <div class="field padding-bottom--24">
+                  <div >
+                    <label for="password">Contraseña</label>
+                  </div>
+                  <input type="text" name="password">
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <input type="submit" name="submit" value="Entrar">
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+

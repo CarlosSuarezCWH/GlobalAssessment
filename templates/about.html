@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid" src="{{ url_for('static', filename='img/students_09.jpg') }}" alt="">
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <h1 class="display-6">¿Quienes somos?</h1>
+                        <p class="text-primary fs-5 mb-4">Las personas que quieren hackear el sistema</p>
+                        <p>Somos un grupo de estudiantes de ingenieria los cuales somos un grupo de flojos
+                          y debido a eso buscamos una manera de facilitar el aprendizaje.<br>
+                          Ahora deseamos compartir esta forma.
+
+                        </p>
+                        <p class="mb-4">Este sistema esta desarrollado por un TEAM recien nacido el cual esta compuesto por: </p>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
+                            <span>3 Estudiantes de Desarrollo de software y Seguridad Informatica</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
+                            <span>2 Ingenieros en Bigdata</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
+                            <span>1 Ingeniero Industrial</span>
+                        </div>
+                        <a class="btn btn-primary py-3 px-4" href="">¿Quieres conocernos?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

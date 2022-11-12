@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   <!-- Header Start -->
+
+    <div class="container-fluid hero-header bg-light py-5 mb-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 mb-3 animated slideInDown">Global Assessment</h1>
+                    <p class="animated slideInDown">
+                        !Revoluciondo la manera de aprender!</p>
+                    <p>
+                    Global Assessment  es un sisistema de apoyo que permite  identificar las habilidades digitales ,
+                    sociales e interpersonales de los alumnos para  impulsar el pensamiento crítico, permitiéndoles
+                    comprtir conocimientos entre los mismos para disminuir el rezago académico. </p> <br>
+                    <a href="/form" class="btn btn-primary py-3 px-4 animated slideInDown">Obten tus resultados</a>
+                </div>
+                <div class="col-lg-6 animated fadeIn">
+                   <img class="img-fluid animated pulse infinite" style="animation-duration: 3s;"  src="{{ url_for('static', filename='img/6663.png') }}" alt="">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+</center>
+
+<!-- Features Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6">¿Por que nosotros?</h1>
+                <p class="text-primary fs-5 mb-5">Mejorando la educacion</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-start">
+                        <img class="img-fluid flex-shrink-0" src="{{ url_for('static', filename='img/cohete.png') }}" alt="" style="width: 70px;">
+                        <div class="ps-4">
+                            <h5 class="mb-3">Inicio facil</h5>
+                            <span>Obtén tus resultados en cuestión de segundos contestando test</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-start">
+                        <img class="img-fluid flex-shrink-0" src="{{ url_for('static', filename='img/shield.png') }}" alt="" style="width: 70px;">
+                        <div class="ps-4">
+                            <h5 class="mb-3">Siempre seguro</h5>
+                            <span>Solo tú puedes acceder a tus dato</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-start">
+                        <img class="img-fluid flex-shrink-0" src="{{ url_for('static', filename='img/manos.png') }}" alt="" style="width: 70px;">
+                        <div class="ps-4">
+                            <h5 class="mb-3">Unidos mejoramos</h5>
+                            <span>Asignación de globalmate que te ayudará a reforzar tus conocimientos</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+<!-- FAQs Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-6">Dudas</h1>
+                <p class="text-primary fs-5 mb-5">Preguntas frecuentes</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.1s">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    ¿Cuánto tiempo dura la encuesta?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    El formulario cuenta con # de preguntas, es un proceso rápido, pero siempre es bueno hacerlo con calma.
+No te presiones
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    ¿Cómo me asignan un compañero?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Considerando tus resultados, se te asignará un Globalmate que ya ha desarrollado las habilidades y competencias de dicha materia.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    ¿Mi compañero es agradable?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Considerando tus resultados, se te asignará un Globalmate que ya ha desarrollado las habilidades y competencias de dicha materia.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                    ¿Puedo cambiar de compañero?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Claro, puedes enviar tu solicitud de cambio al correo de Global Assassment: gu22ia0014@globaluniversity.edu.mx.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    ¿Cómo se agendan las clases?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    En cuanto te asignen a tu Globalmate, podrás mantenerte en contacto con él, para empatar horarios.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    ¿Global Assessment es gratis?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    ¡Es gratuito! En Global Assessment buscamos el apoyo entre compañeros para compartir conocimientos y evitar el rezago académico.
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQs Start -->
+
+<!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='css/animate/wow/wow.min.js') }}" ></script>
+    <script src="{{ url_for('static', filename='css/animate/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='css/animate/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='css/animate/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='css/animate/counterup/counterup.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+{%endblock%}

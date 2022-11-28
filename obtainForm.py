@@ -1,4 +1,5 @@
 from main import *
+import matplotlib.pyplot as plt
 def calificacion_skills(calificacion,hablar,explicar,socializar,puede_ayudar,quiere_ayudar):
     if hablar == 1: hablar = 0
     elif hablar == 0: hablar= 1
@@ -16,14 +17,12 @@ def calificacion_skills(calificacion,hablar,explicar,socializar,puede_ayudar,qui
     if s2 > 70:
         s2=70
     if s2 >= 63 and s2 < 70 and s1 < 26:
-        skill=(s1+s2+2)*quiere_ayudar
+        skill = (s1+s2+2)*quiere_ayudar
     elif s2 == 70 and s1 < 26:
-            skill=(s1+s2+5)*quiere_ayudar    
+            skill = (s1+s2+5)*quiere_ayudar
     else:
         skill=(s1+s2)*quiere_ayudar
     if skill > 10: skill = skill - 10
-    return skill
-
     return skill
 def Calculate(algebra, programacion, analisis, comunicacion, fisica, ingenieria,hablar,explicar,socializar,puede_ayudar,quiere_ayudar):
     algebra=calificacion_skills(algebra,float(hablar),explicar,float(socializar),float(puede_ayudar),float(quiere_ayudar))
@@ -33,4 +32,5 @@ def Calculate(algebra, programacion, analisis, comunicacion, fisica, ingenieria,
     fisica=calificacion_skills(fisica,float(hablar),explicar,float(socializar),float(puede_ayudar),float(quiere_ayudar))
     ingenieria=calificacion_skills(ingenieria,float(hablar),explicar,float(socializar),float(puede_ayudar),float(quiere_ayudar))
     return algebra, programacion, analisis, comunicacion, fisica, ingenieria
+
 

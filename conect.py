@@ -7,10 +7,7 @@ mydb = mysql.connector.connect(
   database="fpryvvyl_global"
 
 )
-
-
 mycursor = mydb.cursor()
-
 mycursor.execute("SHOW tables;")
 myresult = mycursor.fetchall()
 

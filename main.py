@@ -27,6 +27,8 @@ def data():
     if request.method == 'GET':
         return f"The URL /data is accessed directly. Try going to '/form' to submit form"
     if request.method == 'POST':
+        Name= str(request.values.get("Name", None))
+        ID_student= str(request.values.get("ID_student",None))
         algebra = float(request.values.get("algebra", None))
         programacion = float(request.values.get("programacion", None))
         analisis = float(request.values.get("analisis", None))

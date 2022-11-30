@@ -1,6 +1,6 @@
 from main import *
 import numpy as np
-from obtainForm import calificacion_skills
+from ObtainSkills import calificacion_skills
 
 
 def graph():

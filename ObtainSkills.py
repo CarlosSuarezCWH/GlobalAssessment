@@ -1,5 +1,3 @@
-from main import *
-import matplotlib.pyplot as plt
 def calificacion_skills(calificacion,hablar,explicar,socializar,puede_ayudar,quiere_ayudar):
     if hablar == 1: hablar = 0
     elif hablar == 0: hablar= 1

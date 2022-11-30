@@ -11,6 +11,8 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 def insert_crude(ID_student,password,Name):
+    ID_student=data(ID_student)
+
     maximun_assignments=1
     busy_mentor=0
     email=str(ID_student)*'@globaluniversity.edu.mx'

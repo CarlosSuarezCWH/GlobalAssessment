@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template, json
+from flask import Flask, request, render_template
+from insert import *
 from obtainForm import *
 app = Flask(__name__)
 @app.route("/")
@@ -42,6 +43,7 @@ def data():
         hablar = str(request.values.get("hablar", None))
         explicar = float(request.values.get("explicar", None))
         Skills=Calculate(algebra, programacion, analisis, comunicacion, fisica, ingenieria, hablar, explicar, socializar, puede_ayudar,quiere_ayudar)
+        insert_crude()
         return str(Skills)
 if __name__== "__main__":
     app.run(debug=True)

@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template, session, redirect, url_for
 from ObtainSkills import *
 from query import *
+from Conection import *
 app = Flask(__name__)
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -23,33 +25,26 @@ def login():
     return render_template("login.html")
 @app.route("/panel", methods = ['POST', 'GET'])
 def panel():
-    if request.method == 'GET':
-        return f"The URL /data is accessed directly. Try going to '/form' to submit form"
+    msg = ''
     if request.method == 'POST':
-        email = request.values.get("email", None)
-        password = request.values.get("password", None)
-        sql = "SELECT * FROM students WHERE email = %s AND password = %s"
-        val = [(email, password)]
-        mycursor.executemany(sql, val)
-        print("0")
-        account = mycursor.fetchone()
-        print(account)
-        if account:
-            session['loggedin'] = True
-            session['id'] = account['id']
-            session['email'] = account['email']
-            print("1")
-            return 'Logged in successfully!'
-        else:
-            print("2")
-            return render_template("index.html")
-    #return render_template('index.html', msg=msg)
+        if 'email' in request.form and 'password' in request.form:
+            email = request.form['email']
+            password = request.form['password']
+            mycursor.execute('SELECT * FROM students WHERE email = %s AND password = %s', (email, password,))
+            account = mycursor.fetchone()
+            if account:
+                return render_template('panel.html')
+            else:
+                return render_template("index.html")
+    return render_template('index.html', msg=msg)
 
 @app.route('/panel/home')
 def panel_home():
+    session='loggedin'
     if 'loggedin' in session:
-        return render_template('panel.html', username=session['email'])
+        return render_template('panel.html')
     return redirect(url_for('login'))
+
 
 @app.route("/form")
 def form():
@@ -78,11 +73,13 @@ def data():
         datos.append(request.values.get("hablar", None))
         datos.append(request.values.get("explicar", None))
         print(datos)
-        #insert_students(datos)
+        insert_students(datos)
         insert_crude(datos)
         return render_template("login.html")
 
 
 
 if __name__== "__main__":
+    app.secret_key = 'fdsmdfr'
+    app.config['SESSION_TYPE'] = 'filesystem'
     app.run(debug=True)

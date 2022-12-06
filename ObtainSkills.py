@@ -30,5 +30,3 @@ def Calculate(algebra, programacion, analisis, comunicacion, fisica, ingenieria,
     fisica=calificacion_skills(fisica,float(hablar),explicar,float(socializar),float(puede_ayudar),float(quiere_ayudar))
     ingenieria=calificacion_skills(ingenieria,float(hablar),explicar,float(socializar),float(puede_ayudar),float(quiere_ayudar))
     return algebra, programacion, analisis, comunicacion, fisica, ingenieria
-
-

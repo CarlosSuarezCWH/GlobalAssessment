@@ -4,6 +4,29 @@ from query import *
 from Conection import *
 app = Flask(__name__)
 
+@app.route('/data/', methods = ['POST', 'GET'])
+def data():
+    if request.method == 'GET':
+        return f"The URL /data is accessed directly. Try going to '/form' to submit form"
+    if request.method == 'POST':
+        datos=[]
+        datos.append(request.values.get("Name", None))
+        datos.append(request.values.get("ID_student",None))
+        datos.append(request.values.get("algebra", None))
+        datos.append(request.values.get("programacion", None))
+        datos.append(request.values.get("analisis", None))
+        datos.append(request.values.get("comunicacion", None))
+        datos.append(request.values.get("fisica", None))
+        datos.append(request.values.get("ingenieria", None))
+        datos.append(request.values.get("password", None))
+        datos.append(request.values.get("ayudar", None))
+        datos.append(str(1))
+        datos.append(str(1))
+        datos.append(request.values.get("hablar", None))
+        datos.append(request.values.get("explicar", None))
+        insert_students(datos)
+        insert_crude(datos)
+        return render_template("login.html")
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -25,6 +48,9 @@ def login():
     return render_template("login.html")
 @app.route("/panel", methods = ['POST', 'GET'])
 def panel():
+    datos=data
+    print(datos)
+    name=datos[1]
     msg = ''
     if request.method == 'POST':
         if 'email' in request.form and 'password' in request.form:
@@ -33,7 +59,7 @@ def panel():
             mycursor.execute('SELECT * FROM students WHERE email = %s AND password = %s', (email, password,))
             account = mycursor.fetchone()
             if account:
-                return render_template('panel.html')
+                return render_template('panel.html', name)
             else:
                 return render_template("index.html")
     return render_template('index.html', msg=msg)
@@ -52,31 +78,6 @@ def form():
 @app.errorhandler(404)
 def notfound(error):
     return render_template('404.html'), 404
-@app.route('/data/', methods = ['POST', 'GET'])
-def data():
-    if request.method == 'GET':
-        return f"The URL /data is accessed directly. Try going to '/form' to submit form"
-    if request.method == 'POST':
-        datos=[]
-        datos.append(request.values.get("Name", None))
-        datos.append(request.values.get("ID_student",None))
-        datos.append(request.values.get("algebra", None))
-        datos.append(request.values.get("programacion", None))
-        datos.append(request.values.get("analisis", None))
-        datos.append(request.values.get("comunicacion", None))
-        datos.append(request.values.get("fisica", None))
-        datos.append(request.values.get("ingenieria", None))
-        datos.append(request.values.get("password", None))
-        datos.append(request.values.get("ayudar", None))
-        datos.append(str(1))
-        datos.append(str(1))
-        datos.append(request.values.get("hablar", None))
-        datos.append(request.values.get("explicar", None))
-        print(datos)
-        insert_students(datos)
-        insert_crude(datos)
-        return render_template("login.html")
-
 
 
 if __name__== "__main__":

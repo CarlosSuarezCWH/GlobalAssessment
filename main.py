@@ -27,6 +27,7 @@ def data():
         insert_students(datos)
         insert_crude(datos)
         return render_template("login.html")
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -46,11 +47,9 @@ def insert():
 @app.route("/login")
 def login():
     return render_template("login.html")
+
 @app.route("/panel", methods = ['POST', 'GET'])
 def panel():
-    datos=data
-    print(datos)
-    name=datos[1]
     msg = ''
     if request.method == 'POST':
         if 'email' in request.form and 'password' in request.form:
@@ -59,7 +58,7 @@ def panel():
             mycursor.execute('SELECT * FROM students WHERE email = %s AND password = %s', (email, password,))
             account = mycursor.fetchone()
             if account:
-                return render_template('panel.html', name)
+                return render_template('panel.html',name=account[0])
             else:
                 return render_template("index.html")
     return render_template('index.html', msg=msg)
@@ -81,6 +80,4 @@ def notfound(error):
 
 
 if __name__== "__main__":
-    app.secret_key = 'fdsmdfr'
-    app.config['SESSION_TYPE'] = 'filesystem'
     app.run(debug=True)

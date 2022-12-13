@@ -18,15 +18,16 @@ def data():
         datos.append(request.values.get("comunicacion", None))
         datos.append(request.values.get("fisica", None))
         datos.append(request.values.get("ingenieria", None))
-        datos.append(request.values.get("password", None))
         datos.append(request.values.get("ayudar", None))
         datos.append(str(1))
         datos.append(str(1))
         datos.append(request.values.get("hablar", None))
         datos.append(request.values.get("explicar", None))
-        insert_students(datos)
-        insert_crude(datos)
-        return render_template("login.html")
+        datos.append(request.values.get("password", None))
+        #insert_students(datos) <- Si no lo comento crashea ._. 
+        #insert_crude(datos) <- Lo mismo que el de arriba 
+        return Skills(datos)
+        #return render_template("login.html")
 
 @app.route("/")
 def home():

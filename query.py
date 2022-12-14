@@ -86,8 +86,7 @@ def insert_crude(datos):
     mydb.commit()
 
 
-def insert_skills(datos,skills):
-    ID_student = datos[1]
+def insert_skills(ID_student,skills):
     id_algebra = 1
     id_progra = 2
     id_realidad_social = 3

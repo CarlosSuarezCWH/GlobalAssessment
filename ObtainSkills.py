@@ -11,6 +11,8 @@ def lista_limpia(datos):
             i="0"
     return lista
 
+
+
 def Skills(datos):
     lista=lista_limpia(datos)
     skills=[]
@@ -19,6 +21,7 @@ def Skills(datos):
         skill=(calificacion*lista[-1]*0.8)+((lista[6]+lista[7]+lista[8]+(lista[9]+1))*5)
         skills.append(skill)
     return skills
+
 
 
 

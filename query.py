@@ -84,3 +84,46 @@ def insert_crude(datos):
     mycursor.executemany(sql, val)
 
     mydb.commit()
+
+
+def insert_skills(datos,skills):
+    ID_student = datos[1]
+    id_algebra = 1
+    id_progra = 2
+    id_realidad_social = 3
+    id_comunicacion = 4
+    id_fisica = 5
+    id_soluciones_ingenieria = 6
+
+    print(datos[1])
+    # insert algebra
+    sql = "insert into processed_data (id_students, id_class, qualification) values (%s, %s, %s)"
+    val = [(ID_student, id_algebra, skills[0] )]
+    mycursor.executemany(sql, val)
+
+    # insert Programacion
+    sql = "insert into processed_data (id_students, id_class, qualification) values (%s, %s, %s)"
+    val = [(ID_student, id_progra, skills[1] )]
+    mycursor.executemany(sql, val)
+
+    # insert Análisis
+    sql = "insert into processed_data (id_students, id_class, qualification) values (%s, %s, %s)"
+    val = [(ID_student, id_realidad_social, skills[2] )]
+    mycursor.executemany(sql, val)
+
+    # insert Análisis
+    sql = "insert into processed_data (id_students, id_class, qualification) values (%s, %s, %s)"
+    val = [(ID_student, id_comunicacion, skills[3] )] 
+    mycursor.executemany(sql, val)
+
+    # insert soluciones
+    sql = "insert into processed_data (id_students, id_class, qualification) values (%s, %s, %s)"
+    val = [(ID_student, id_soluciones_ingenieria, skills[4] )] 
+    mycursor.executemany(sql, val)
+
+    # insert soluciones
+    sql = "insert into processed_data (id_students, id_class, qualification) values (%s, %s, %s)"
+    val = [(ID_student, id_fisica, skills[5] )] 
+    mycursor.executemany(sql, val)
+
+    mydb.commit()

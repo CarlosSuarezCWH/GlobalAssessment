@@ -24,12 +24,10 @@ def data():
         datos.append(request.values.get("hablar", None))
         datos.append(request.values.get("explicar", None))
         datos.append(request.values.get("password", None))
-        datos1=datos
         insert_students(datos) 
         insert_crude(datos) 
         skill=Skills(datos)
-        print(datos1)
-        insert_skills(datos1,skill)
+        insert_skills(datos,skill)
         return render_template("login.html")
 
 @app.route("/")

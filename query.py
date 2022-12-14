@@ -95,7 +95,6 @@ def insert_skills(datos,skills):
     id_fisica = 5
     id_soluciones_ingenieria = 6
 
-    print(datos[1])
     # insert algebra
     sql = "insert into processed_data (id_students, id_class, qualification) values (%s, %s, %s)"
     val = [(ID_student, id_algebra, skills[0] )]
